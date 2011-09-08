@@ -24,7 +24,6 @@ Available at http://www.sweethome3d.eu/, this program is aimed at people who wan
 %setup -q -n %{name}-%{version}
 %__patch -p1 %{name} %{PATCH0}
 
-#%patch0
 %build
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -39,8 +38,11 @@ mkdir -p %{buildroot}%{_datadir}/applications
 cat > %{buildroot}%{_datadir}/applications/%{name}.desktop <<EOF
 [Desktop Entry]
 Name=Sweet Home 3D
+Name[ru]=Милый дом 3D
 GenericName=Sweet Home 3D
+GenericName[ru]=Милый дом 3D
 Comment=Design Application
+Comment[ru]=Программа проектирования домашнего интерьера в 3D
 Exec=/usr/bin/sweethome
 Icon=/usr/lib/sweethome_3d/sweethome.png
 Terminal=false
