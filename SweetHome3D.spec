@@ -10,7 +10,7 @@ URL:		http://www.sweethome3d.com/
 Source0:	sweethome3d-%{version}.tar.gz
 Patch0:		sweethome.patch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-build
-
+BuildRequires:	ant, openjdk-devel
 Requires:	java >= 1.6-sun
 
 %description
