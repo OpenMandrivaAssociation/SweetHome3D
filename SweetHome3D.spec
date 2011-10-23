@@ -1,5 +1,5 @@
 Name:		SweetHome3D 
-Version:	3.2
+Version:	3.3
 Release:	%mkrel 1
 Summary:	Sweet Home 3D is a free interior design application 
 License:	GPL
@@ -7,7 +7,7 @@ Group:		Graphics
 
 URL:		http://www.sweethome3d.com/
 #Source0:	sweethome_3d-2.6.tar.bz2
-Source0:	%{name}-%{version}-linux-x86.tar.bz2
+Source0:	sweethome3d-%{version}.tar.gz
 Patch0:		sweethome.patch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-build
 
@@ -20,11 +20,13 @@ Sweet Home 3D is a free interior design application that helps you place your fu
 Available at http://www.sweethome3d.eu/, this program is aimed at people who want to design their interior quickly, whether they are moving or they just want to redesign their existing home. Numerous visual guides help you draw the plan of your home and layout furniture. You may draw the walls of your rooms upon the image of an existing plan, and then, drag and drop furniture onto the plan from a catalog organized by categories. Each change in the 2D plan is simultaneously updated in the 3D view, to show you a realistic rendering of your layout.
 
 %prep 
-
-%setup -q -n %{name}-%{version}
-%__patch -p1 %{name} %{PATCH0}
+%setup -q -n %{name}
+#%setup -q -n %{name}-%{version}
+#%__patch -p1 %{name} %{PATCH0}
 
 %build
+ant
+
 %install
 rm -rf $RPM_BUILD_ROOT
 mkdir -p %{buildroot}/opt/%{name}
