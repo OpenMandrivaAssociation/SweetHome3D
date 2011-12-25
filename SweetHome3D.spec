@@ -1,7 +1,7 @@
 %define		packet_name sweethome3d
 
 Name:		SweetHome3D 
-Version:	3.3
+Version:	3.4
 Release:	%mkrel 1
 Summary:	Sweet Home 3D is a free interior design application 
 License:	GPL
@@ -10,7 +10,7 @@ URL:		http://www.sweethome3d.com/
 #Source0:	sweethome_3d-2.6.tar.bz2
 Source0:	%{name}-%{version}-src.zip
 #Source0:	%{packet_name}-%{version}.tar.gz
-Source1:	FurnitureLibraryEditor-1.5-src.zip
+Source1:	FurnitureLibraryEditor-1.6-src.zip
 Source2:	sunflow-0.07.3g-src-diff.zip
 Source3:	%{name}-%{version}-javadoc.zip
 Patch0:		sweethome.patch
@@ -38,8 +38,10 @@ ant jarExecutable
 
 %install
 rm -rf $RPM_BUILD_ROOT
-mkdir -p %{buildroot}/opt/%{name}
-mkdir -p %{buildroot}/opt/%{name}/lib
+#mkdir -p %{_bindir}/%{name}
+#mkdir -p %{buildroot}%{_libdir}/%{name}
+install -Dm0644 $RPM_BUILD_ROOT%{_bindir}/%{name}/install/%{name}-%{version} %{name}-%{version}
+install -Dm0644 $RPM_BUILD_ROOT%{_libdir}/%{name}/install/%{name}-%{version} %{name}-%{version}
 install -Dm0644 $RPM_BUILD_DIR/%{name}-%{version}/*.TXT %{buildroot}/opt/%{name}
 install -Dm0655 $RPM_BUILD_DIR/%{name}-%{version}/%{name} %{buildroot}/opt/%{name}/%{name}
 install -Dm0644 $RPM_BUILD_DIR/%{name}-%{version}/lib/* %{buildroot}/opt/%{name}/lib
@@ -77,8 +79,8 @@ rm -rf /usr/bin/sweethome
 %defattr(-,root,root)
 %{_datadir}/applications/%{name}.desktop
 /opt/%{name}/%{name}
-/opt/%{name}/*.TXT
-/opt/%{name}/lib/*
+#/opt/%{name}/*.TXT
+#/opt/%{name}/lib/*
 
 #/usr/*
 #/usr/lib/*
