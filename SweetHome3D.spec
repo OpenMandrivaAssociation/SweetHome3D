@@ -2,7 +2,7 @@
 
 Name:		SweetHome3D 
 Version:	3.5
-Release:	%mkrel 2
+Release:	%mkrel 3
 Summary:	Sweet Home 3D is a free interior design application 
 License:	GPL
 Group:		Graphics
