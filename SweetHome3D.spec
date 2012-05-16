@@ -2,7 +2,7 @@
 
 Name:		SweetHome3D 
 Version:	3.5
-Release:	%mkrel 3
+Release:	%mkrel 4
 Summary:	Sweet Home 3D is a free interior design application 
 License:	GPL
 Group:		Graphics
@@ -67,11 +67,11 @@ cat > %{buildroot}%{_datadir}/applications/%{name}.desktop <<EOF
 Name=Sweet Home 3D
 Name[ru]=Милый дом 3D
 GenericName=Sweet Home 3D
-GenericName[ru]=Милый дом 3D
+GenericName[ru]=SweetHome 3D
 Comment=Design Application
 Comment[ru]=Программа проектирования домашнего интерьера в 3D
 Exec=/usr/bin/%{name}
-Icon=/usr/share/icons/%{name}.png
+Icon=%{_iconsdir}/%{name}Icon48x48.png
 Terminal=false
 Type=Application
 StartupNotify=true
