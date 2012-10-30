@@ -2,7 +2,7 @@
 
 Name:		SweetHome3D 
 Version:	3.7
-Release:	%mkrel 1
+Release:	2
 Summary:	Sweet Home 3D is a free interior design application 
 License:	GPL
 Group:		Graphics
@@ -28,11 +28,11 @@ is simultaneously updated in the 3D view, to show you a realistic rendering of y
 
 %prep 
 %setup -q -n %{name}-%{version}-src
-#%setup1 -q
-#%setup2 -q
-#%setup3 -q
+#setup1 -q
+#setup2 -q
+#setup3 -q
 
-#%setup -q -n %{name}-%{version}
+#setup -q -n %{name}-%{version}
 #patch $RPM_BUILD_DIR/%{name}-%{version}-src/install/linux/%{name} %{PATCH0}
 
 %build
@@ -52,7 +52,7 @@ install -Dm0655 $RPM_BUILD_DIR/%{name}-%{version}-src/deploy/%{name}*.png %{buil
 install -Dm0655 $RPM_BUILD_DIR/%{name}-%{version}-src/deploy/%{name}*.jpg %{buildroot}%{_iconsdir}
 install -Dm0655 $RPM_BUILD_DIR/%{name}-%{version}-src/deploy/%{name}*.gif %{buildroot}%{_iconsdir}
 mkdir -p %{buildroot}%{_bindir}
-install -Dm0655 $RPM_BUILD_DIR/%{name}-%{version}-src/install/linux/%{name} %{buildroot}%{_bindir}/%{name}
+#install -Dm0655 $RPM_BUILD_DIR/%{name}-%{version}-src/install/linux/%{name} %{buildroot}%{_bindir}/%{name}
 %ifarch x86_64 
 mkdir -p %{buildroot}%{_libdir}
 install -Dm0655 $RPM_BUILD_DIR/%{name}-%{version}-src/lib/linux/x64/*.so %{buildroot}%{_libdir}/
@@ -97,6 +97,8 @@ cat > %{buildroot}%{_bindir}/%{name} << EOF
 exec java -jar /usr/share/SweetHome3D/SweetHome3D.jar
 
 EOF
+
+chmod +x %{buildroot}%{_bindir}/%{name}
 
 %clean
 
