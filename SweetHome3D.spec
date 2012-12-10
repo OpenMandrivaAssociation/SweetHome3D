@@ -1,21 +1,20 @@
 %define		pkgname sweethome3d
 
 Name:		SweetHome3D 
-Version:	3.7
-Release:	%mkrel 2
+Version:	3.5
+Release:	%mkrel 4
 Summary:	Sweet Home 3D is a free interior design application 
 License:	GPL
 Group:		Graphics
 URL:		http://www.sweethome3d.com/
 Source0:	%{name}-%{version}-src.zip
 #Source0:	%{pkgname}-%{version}.tar.gz
-Source1:	FurnitureLibraryEditor-1.9-src.zip
+Source1:	FurnitureLibraryEditor-1.7-src.zip
 #Source2:	sunflow-0.07.3g-src-diff.zip
 Source3:	%{name}-%{version}-javadoc.zip
 Patch0:		%{name}.patch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-build
-BuildRequires:	java
-BuildRequires:	ant
+BuildRequires:	ant, java
 Requires:	java >= 1.6-sun
 
 %description
@@ -28,12 +27,12 @@ is simultaneously updated in the 3D view, to show you a realistic rendering of y
 
 %prep 
 %setup -q -n %{name}-%{version}-src
-#setup1 -q
-#setup2 -q
-#setup3 -q
+#%setup1 -q
+#%setup2 -q
+#%setup3 -q
 
-#setup -q -n %{name}-%{version}
-#patch $RPM_BUILD_DIR/%{name}-%{version}-src/install/linux/%{name} %{PATCH0}
+#%setup -q -n %{name}-%{version}
+patch $RPM_BUILD_DIR/%{name}-%{version}-src/install/linux/%{name} %{PATCH0}
 
 %build
 ant jarExecutable
@@ -52,7 +51,7 @@ install -Dm0655 $RPM_BUILD_DIR/%{name}-%{version}-src/deploy/%{name}*.png %{buil
 install -Dm0655 $RPM_BUILD_DIR/%{name}-%{version}-src/deploy/%{name}*.jpg %{buildroot}%{_iconsdir}
 install -Dm0655 $RPM_BUILD_DIR/%{name}-%{version}-src/deploy/%{name}*.gif %{buildroot}%{_iconsdir}
 mkdir -p %{buildroot}%{_bindir}
-#install -Dm0655 $RPM_BUILD_DIR/%{name}-%{version}-src/install/linux/%{name} %{buildroot}%{_bindir}/%{name}
+install -Dm0655 $RPM_BUILD_DIR/%{name}-%{version}-src/install/linux/%{name} %{buildroot}%{_bindir}/%{name}
 %ifarch x86_64 
 mkdir -p %{buildroot}%{_libdir}
 install -Dm0655 $RPM_BUILD_DIR/%{name}-%{version}-src/lib/linux/x64/*.so %{buildroot}%{_libdir}/
@@ -80,26 +79,6 @@ MimeType=foo/bar;foo2/bar2;
 Categories=Application;Graphics;
 EOF
 
-# script start program
-cat > %{buildroot}%{_bindir}/%{name} << EOF
-#!/bin/sh
-
-# Retrieve Sweet Home 3D directory
-#PROGRAM=`readlink "$0"`
-#if [ "$PROGRAM" = "" ]; then
-#  PROGRAM=$0
-#  fi
-#  PROGRAM_DIR=`dirname "$PROGRAM"`
-#  
-#  # Run Sweet Home 3D
-#  exec "$PROGRAM_DIR"/jre1.6.0_37/bin/java -Xmx1024m -classpath "$PROGRAM_DIR"/lib/SweetHome3D.jar:"$PROGRAM_DIR"/lib/Furniture.jar:"$PROGRAM_DIR"//lib/Textures.jar:"$PROGRAM_DIR"/lib/Help.jar:"$PROGRAM_DIR"/lib/Loader3DS1_2u.jar:"$PROGRAM_DIR"/lib/iText-2.1.7.jar:"$PROGRAM_DIR"/lib/freehep-vectorgraphics-svg-2.1.1.jar:"$PROGRAM_DIR"/lib/sunflow-0.07.3g.jar:"$PROGRAM_DIR"/lib/jmf.jar:"$PROGRAM_DIR"/lib/batik-svgpathparser-1.7.jar:"$PROGRAM_DIR"/lib/j3dcore.jar:"$PROGRAM_DIR"/lib/j3dutils.jar:"$PROGRAM_DIR"/lib/vecmath.jar:"$PROGRAM_DIR"/jre1.6.0_37/lib/javaws.jar -Djava.library.path="$PROGRAM_DIR"/lib com.eteks.sweethome3d.SweetHome3D -open "$1"
-
-exec java -jar /usr/share/SweetHome3D/SweetHome3D.jar
-
-EOF
-
-chmod +x %{buildroot}%{_bindir}/%{name}
-
 %clean
 
 rm -rf $RPM_BUILD_ROOT
@@ -108,7 +87,7 @@ rm -rf $RPM_BUILD_ROOT
 #ln -sf /opt/%{name}/%{name} /usr/bin/sweethome
 
 %postun
-rm -rf /usr/bin/%{name}
+rm -rf /usr/bin/sweethome
 
 %files
 %defattr(-,root,root)
@@ -121,3 +100,19 @@ rm -rf /usr/bin/%{name}
 %{_iconsdir}/*.png
 %{_iconsdir}/*.jpg
 %{_iconsdir}/*.gif
+
+
+%changelog
+* Wed May 16 2012 Sergey Zhemoitel <serg@mandriva.org> 3.5-4mdv2011.0
++ Revision: 799155
+- update to 3.5 release 2
+- update to version 3.5
+- add new release 3.4
+- new version 3.3
+- new release 3.3, added package with source code
+- add russian comment in .desktop
+
+* Fri Jul 22 2011 Sergey Zhemoitel <serg@mandriva.org> 3.2-1
++ Revision: 690943
+- imported package SweetHome3D
+
