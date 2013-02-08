@@ -2,7 +2,7 @@
 
 Name:		SweetHome3D 
 Version:	3.5
-Release:	%mkrel 4
+Release:	5
 Summary:	Sweet Home 3D is a free interior design application 
 License:	GPL
 Group:		Graphics
@@ -18,12 +18,16 @@ BuildRequires:	ant, java
 Requires:	java >= 1.6-sun
 
 %description
-Sweet Home 3D is a free interior design application that helps you place your furniture on a house 2D plan, with a 3D preview.
-Available at http://www.sweethome3d.eu/, this program is aimed at people who want to design their interior quickly,
-whether they are moving or they just want to redesign their existing home. Numerous visual guides help you draw the
-plan of your home and layout furniture. You may draw the walls of your rooms upon the image of an existing plan,
-and then, drag and drop furniture onto the plan from a catalog organized by categories. Each change in the 2D plan
-is simultaneously updated in the 3D view, to show you a realistic rendering of your layout.
+Sweet Home 3D is a free interior design application that helps you place your
+furniture on a house 2D plan, with a 3D preview.
+Available at http://www.sweethome3d.eu/, this program is aimed at people who
+want to design their interior quickly, whether they are moving or they just
+want to redesign their existing home. Numerous visual guides help you draw the
+plan of your home and layout furniture. You may draw the walls of your rooms
+upon the image of an existing plan, and then, drag and drop furniture onto the
+plan from a catalog organized by categories. Each change in the 2D plan is
+simultaneously updated in the 3D view, to show you a realistic rendering of
+your layout.
 
 %prep 
 %setup -q -n %{name}-%{version}-src
@@ -38,7 +42,7 @@ patch $RPM_BUILD_DIR/%{name}-%{version}-src/install/linux/%{name} %{PATCH0}
 ant jarExecutable
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 #mkdir -p $RPM_BUILD_DIR%{_bindir}
 #mkdir -p $RPM_BUILD_DIR%{_libdir}
 install -Dm0644 $RPM_BUILD_DIR/%{name}-%{version}-src/install/%{name}-%{version}.jar %{buildroot}%{_datadir}/%{name}/%{name}.jar
@@ -81,7 +85,7 @@ EOF
 
 %clean
 
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 #%post
 #ln -sf /opt/%{name}/%{name} /usr/bin/sweethome
