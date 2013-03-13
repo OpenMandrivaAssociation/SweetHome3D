@@ -2,6 +2,8 @@
 
 %define __noautoreq '.*VERSION.*'
 
+%define debug_package %{nil}
+
 Name:		SweetHome3D 
 Version:	3.6
 Release:	2
