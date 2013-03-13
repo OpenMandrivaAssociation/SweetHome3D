@@ -16,6 +16,8 @@ Patch0:		%{name}.patch
 BuildRequires:	ant, java
 Requires:	java >= 1.6-sun
 
+%define debug_package %{nil}
+
 %description
 Sweet Home 3D is a free interior design application that helps you place your
 furniture on a house 2D plan, with a 3D preview.
