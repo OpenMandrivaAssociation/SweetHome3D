@@ -1,8 +1,10 @@
 %define		pkgname sweethome3d
 
+%define __noautoreq '.*VERSION.*'
+
 Name:		SweetHome3D 
-Version:	3.5
-Release:	6
+Version:	3.6
+Release:	2
 Summary:	Sweet Home 3D is a free interior design application 
 License:	GPL
 Group:		Graphics
@@ -15,8 +17,6 @@ Source3:	%{name}-%{version}-javadoc.zip
 Patch0:		%{name}.patch
 BuildRequires:	ant, java
 Requires:	java >= 1.6-sun
-
-%define debug_package %{nil}
 
 %description
 Sweet Home 3D is a free interior design application that helps you place your
@@ -32,9 +32,7 @@ your layout.
 
 %prep 
 %setup -q -n %{name}-%{version}-src
-#%setup1 -q
-#%setup2 -q
-#%setup3 -q
+%patch0 -p0
 
 rm -rf lib/windows lib/macosx
 %ifarch %{ix86}
@@ -44,32 +42,29 @@ rm -rf lib/linux/i386
 %endif
 
 
-#%setup -q -n %{name}-%{version}
-patch %{buildroot}/%{name}-%{version}-src/install/linux/%{name} %{PATCH0}
-
 %build
 ant jarExecutable
 
 %install
 #mkdir -p %{buildroot}%{_bindir}
 #mkdir -p %{buildroot}%{_libdir}
-install -Dm0644 %{buildroot}/%{name}-%{version}-src/install/%{name}-%{version}.jar %{buildroot}%{_datadir}/%{name}/%{name}.jar
+install -Dm0644 install/%{name}-%{version}.jar %{buildroot}%{_datadir}/%{name}/%{name}.jar
 mkdir -p %{buildroot}%{_datadir}/%{name}/lib
-install -Dm0644 %{buildroot}/%{name}-%{version}-src/lib/*.jar %{buildroot}%{_datadir}/%{name}/lib
+install -Dm0644 lib/*.jar %{buildroot}%{_datadir}/%{name}/lib
 mkdir -p %{buildroot}%{_docdir}/%{name}
-install -Dm0644 %{buildroot}/%{name}-%{version}-src/*.TXT %{buildroot}%{_docdir}/%{name}
+install -Dm0644 *.TXT %{buildroot}%{_docdir}/%{name}
 mkdir -p %{buildroot}%{_iconsdir}
-install -Dm0655 %{buildroot}/%{name}-%{version}-src/deploy/%{name}*.png %{buildroot}%{_iconsdir}
-install -Dm0655 %{buildroot}/%{name}-%{version}-src/deploy/%{name}*.jpg %{buildroot}%{_iconsdir}
-install -Dm0655 %{buildroot}/%{name}-%{version}-src/deploy/%{name}*.gif %{buildroot}%{_iconsdir}
+install -Dm0655 deploy/%{name}*.png %{buildroot}%{_iconsdir}
+install -Dm0655 deploy/%{name}*.jpg %{buildroot}%{_iconsdir}
+install -Dm0655 deploy/%{name}*.gif %{buildroot}%{_iconsdir}
 mkdir -p %{buildroot}%{_bindir}
-install -Dm0655 %{buildroot}/%{name}-%{version}-src/install/linux/%{name} %{buildroot}%{_bindir}/%{name}
+install -Dm0655 install/linux/%{name} %{buildroot}%{_bindir}/%{name}
 %ifarch x86_64 
 mkdir -p %{buildroot}%{_libdir}
-install -Dm0655 %{buildroot}/%{name}-%{version}-src/lib/linux/x64/*.so %{buildroot}%{_libdir}/
+install -Dm0655 lib/linux/x64/*.so %{buildroot}%{_libdir}/
 %else
 mkdir -p %{buildroot}%{_libdir}
-install -Dm0655 %{buildroot}/%{name}-%{version}-src/lib/linux/i386/*.so %{buildroot}%{_libdir}/
+install -Dm0655 lib/linux/i386/*.so %{buildroot}%{_libdir}/
 %endif
 
 # menu-entry
