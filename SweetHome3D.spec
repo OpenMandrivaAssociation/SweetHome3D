@@ -1,28 +1,31 @@
+%define         pkgname         sweethome3d
 %define         pkgmod          3DModels
-%define         modelver        1.3.1
+%define         modelver        1.3.2
 %define         debug_package   %{nil}
 
 %define __noautoreq '.*VERSION.*'
 
 Name:		SweetHome3D
-Version:	4.2
+Version:	4.4
 Release:	1
 Summary:	Sweet Home 3D is a free interior design application 
-License:	GPL
+License:	GPLv2+
 Group:		Graphics
 URL:		http://www.sweethome3d.com/
 Source0:        %{name}-%{version}-src.zip
-Source1:        FurnitureLibraryEditor-1.12-src.zip
+#Source1:        FurnitureLibraryEditor-1.12-src.zip
+#Source2:      sunflow-0.07.3g-src-diff.zip
 Source3:        %{name}-%{version}-javadoc.zip
-Source4:        %{pkgmod}-Contributions-%{modelver}.zip
-Source5:        %{pkgmod}-KatorLegaz-%{modelver}.zip
-Source6:        %{pkgmod}-LucaPresidente-%{modelver}.zip
-Source7:        %{pkgmod}-Reallusion-%{modelver}.zip
-Source8:        %{pkgmod}-Scopia-%{modelver}.zip
-Source9:        %{pkgmod}-Trees-%{modelver}.zip
-Source10:       %{pkgmod}-BlendSwap-CC-0-%{modelver}.zip
-Source11:       %{pkgmod}-BlendSwap-CC-BY-%{modelver}.zip
-Source12:       TexturesLibraryEditor-1.3-src.zip
+#Source4:        %{pkgmod}-Contributions-%{modelver}.zip
+#Source5:        %{pkgmod}-KatorLegaz-%{modelver}.zip
+#Source6:        %{pkgmod}-LucaPresidente-%{modelver}.zip
+#Source7:        %{pkgmod}-Reallusion-%{modelver}.zip
+#Source8:        %{pkgmod}-Scopia-%{modelver}.zip
+#Source9:        %{pkgmod}-Trees-%{modelver}.zip
+#Source10:       %{pkgmod}-BlendSwap-CC-0-%{modelver}.zip
+#Source11:       %{pkgmod}-BlendSwap-CC-BY-%{modelver}.zip
+#Source12:       TexturesLibraryEditor-1.3-src.zip
+#Patch0:               %{name}.patch
 BuildRequires:  java
 BuildRequires:  ant
 Requires:       java >= 1.6-sun
@@ -42,6 +45,7 @@ rooms upon the image of an existing plan, and then,
 drag and drop furniture onto the plan from a catalog
 organized by categories. Each change in the 2D plan
 is simultaneously updated in the 3D view, to show
+you a realistic rendering of your layout.
 
 %prep 
 %setup -q -n %{name}-%{version}-src
@@ -108,7 +112,7 @@ cat > %{buildroot}%{_bindir}/%{name} << EOF
 #  PROGRAM=$0
 #  fi
 #  PROGRAM_DIR=`dirname "$PROGRAM"`
-#..
+#
 #  # Run Sweet Home 3D
 #  exec "$PROGRAM_DIR"/jre1.6.0_37/bin/java -Xmx1024m -classpath "$PROGRAM_DIR"/lib/SweetHome3D.jar:"$PROGRAM_DIR"/lib/Furniture.jar:"$PROGRAM_DIR"//lib/Textures.jar:"$PROGRAM_DIR"/lib/Help.jar:"$PROGRAM_DIR"/lib/Loader3DS1_2u.jar:"$PROGRAM_DIR"/lib/iText-2.1.7.jar:"$PROGRAM_DIR"/lib/freehep-vectorgraphics-svg-2.1.1.jar:"$PROGRAM_DIR"/lib/sunflow-0.07.3g.jar:"$PROGRAM_DIR"/lib/jmf.jar:"$PROGRAM_DIR"/lib/batik-svgpathparser-1.7.jar:"$PROGRAM_DIR"/lib/j3dcore.jar:"$PROGRAM_DIR"/lib/j3dutils.jar:"$PROGRAM_DIR"/lib/vecmath.jar:"$PROGRAM_DIR"/jre1.6.0_37/lib/javaws.jar -Djava.library.path="$PROGRAM_DIR"/lib com.eteks.sweethome3d.SweetHome3D -open "$1"
 

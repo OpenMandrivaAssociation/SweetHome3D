@@ -1,31 +1,43 @@
 removed_sources:
+  3DModels-BlendSwap-CC-0-1.3.1.zip: 27732273cc06829c11dc810eb16b316f258daf6c
+  3DModels-BlendSwap-CC-BY-1.3.1.zip: a7f543cda4174b78079e17333e94a719710f2f84
   3DModels-Contributions-1.2.2.zip: db013beb75ef35a4df88346a2b5d1ff2f796cd44
+  3DModels-Contributions-1.3.1.zip: 8c23803ec1671ebb0006dbb01bcf3ec7f7964fd2
   3DModels-KatorLegaz-1.2.2.zip: efb845ff1de4bfb270f59618d57cce4f0a752657
+  3DModels-KatorLegaz-1.3.1.zip: 0c4298068b57e89d5b13f7d85d877a892f2403a4
   3DModels-LucaPresidente-1.2.2.zip: e339df5ed93fe8a7afb4ae63bb6406e4e62e77b4
+  3DModels-LucaPresidente-1.3.1.zip: 6f6513d1c614fb0cc47f3f6b4f0e0cf1c24b826c
   3DModels-Reallusion-1.2.2.zip: a032ad01277a904f174838a622172a31a103c122
+  3DModels-Reallusion-1.3.1.zip: e6f14aa47f4467c3e27f4b30ea4c19a653fd6517
   3DModels-Scopia-1.2.2.zip: 1b529bc65dcf2a0d24e291d69b637dc520fbc86e
+  3DModels-Scopia-1.3.1.zip: 72f18613b7cea8ec6547ef0686822c2b45d71155
   3DModels-Trees-1.2.2.zip: 0b78a64c918b51868aa34b37be6a9a43bc54ca12
-  TexturesLibraryEditor-1.1-src.zip: a166a2463b274bdc142f1fa884661bec4eb208e1
-  TexturesLibraryEditor-1.2-src.zip: f5438bfdc0e06787806ad4f50365fb3e2de6a602
-  FurnitureLibraryEditor-1.10-src.zip: 6daba0c030faec10c12a2e3c8cbd358a814d29b5
-  FurnitureLibraryEditor-1.11-src.zip: 3a838c3b2cd5b4564ebf34b38d592535e2865744
-  FurnitureLibraryEditor-1.9-src.zip: a6493bbd4d0146227652adcc2de817544fb402d7
+  3DModels-Trees-1.3.1.zip: 54a3cb359605d331ee14f931494730b36a4a6ac4
   SweetHome3D-3.7-javadoc.zip: 1e085f0c68ff48f5e9ec23edb011d34d227e50f8
   SweetHome3D-3.7-src.zip: 3518c212294bc7e39d1f1737e78c6a1a929b246e
   SweetHome3D-4.0-javadoc.zip: 4efd90ec5094c0654f9150633769ddd227b03cbd
   SweetHome3D-4.0-src.zip: 870dd5680d84f21a294b3361c6ba8b77a9e01573
   SweetHome3D-4.1-javadoc.zip: 16b043e70a52b43090e467a6d1f65cd2a886ef4f
   SweetHome3D-4.1-src.zip: 0e018befc77afdea28ac9ca454b8cef8d1406420
-sources:
-  3DModels-BlendSwap-CC-0-1.3.1.zip: 27732273cc06829c11dc810eb16b316f258daf6c
-  3DModels-BlendSwap-CC-BY-1.3.1.zip: a7f543cda4174b78079e17333e94a719710f2f84
-  3DModels-Contributions-1.3.1.zip: 8c23803ec1671ebb0006dbb01bcf3ec7f7964fd2
-  3DModels-KatorLegaz-1.3.1.zip: 0c4298068b57e89d5b13f7d85d877a892f2403a4
-  3DModels-LucaPresidente-1.3.1.zip: 6f6513d1c614fb0cc47f3f6b4f0e0cf1c24b826c
-  3DModels-Reallusion-1.3.1.zip: e6f14aa47f4467c3e27f4b30ea4c19a653fd6517
-  3DModels-Scopia-1.3.1.zip: 72f18613b7cea8ec6547ef0686822c2b45d71155
-  3DModels-Trees-1.3.1.zip: 54a3cb359605d331ee14f931494730b36a4a6ac4
-  FurnitureLibraryEditor-1.12-src.zip: 0d5636154f9295c902ab138b9a0f8453dd7ca06b
   SweetHome3D-4.2-javadoc.zip: dd90f18acddebeedcf85d2207814fc6b6e9925e8
   SweetHome3D-4.2-src.zip: 00087805ddf7bde36f23b7cfa1ada70cd63a4895
+  SweetHome3D-4.3-javadoc.zip: 10e6da0cd861d1713b64b728d37b86a6e863a81d
+  SweetHome3D-4.3-src.zip: 2022a3b1bc172a991a19f170518259e7f27e588d
+  FurnitureLibraryEditor-1.9-src.zip: a6493bbd4d0146227652adcc2de817544fb402d7
+  FurnitureLibraryEditor-1.10-src.zip: 6daba0c030faec10c12a2e3c8cbd358a814d29b5
+  FurnitureLibraryEditor-1.11-src.zip: 3a838c3b2cd5b4564ebf34b38d592535e2865744
+  TexturesLibraryEditor-1.1-src.zip: a166a2463b274bdc142f1fa884661bec4eb208e1
+  TexturesLibraryEditor-1.2-src.zip: f5438bfdc0e06787806ad4f50365fb3e2de6a602
+sources:
+  3DModels-BlendSwap-CC-0-1.3.2.zip: b93c3bcf42e11edb86d44365bd0c74f1c04d2014
+  3DModels-BlendSwap-CC-BY-1.3.2.zip: 0d1817c9b62bf9d5aace9e630ec142c0c8850042
+  3DModels-Contributions-1.3.2.zip: 8b7df56bc926305dfa9d9c91ea2d87c6c793f073
+  3DModels-KatorLegaz-1.3.2.zip: 21ca1a5224fc66981e66f489f549d5391d64214e
+  3DModels-LucaPresidente-1.3.2.zip: bd10d64ae461fa7ddb620fe974a51685db2d3c3b
+  3DModels-Reallusion-1.3.2.zip: 71ce4ededc6bb11afe2112d2c02c90c072c646c8
+  3DModels-Scopia-1.3.2.zip: 3d9000d07cb6cb95d2f943c38087553fd20fb141
+  3DModels-Trees-1.3.2.zip: 2f059902cf220dfc7478606da6840123d7e065c5
+  FurnitureLibraryEditor-1.12-src.zip: 0d5636154f9295c902ab138b9a0f8453dd7ca06b
+  SweetHome3D-4.4-javadoc.zip: 8076c93bbe70f87e5ce901a96d21141950ce3b0b
+  SweetHome3D-4.4-src.zip: 9b94bced9ce3c467f87424c4551424769afffaf5
   TexturesLibraryEditor-1.3-src.zip: b4bb3100403fc3900622fb8f5bd8f2f6a52882f8
