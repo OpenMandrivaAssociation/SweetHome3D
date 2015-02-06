@@ -7,7 +7,7 @@
 
 Name:		SweetHome3D
 Version:	4.4
-Release:	1
+Release:	2
 Summary:	Sweet Home 3D is a free interior design application 
 License:	GPLv2+
 Group:		Graphics
