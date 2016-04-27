@@ -6,8 +6,8 @@
 %define __noautoreq '.*VERSION.*'
 
 Name:		SweetHome3D
-Version:	4.4
-Release:	2
+Version:	5.2
+Release:	1
 Summary:	Sweet Home 3D is a free interior design application 
 License:	GPLv2+
 Group:		Graphics
@@ -28,8 +28,7 @@ Source3:        %{name}-%{version}-javadoc.zip
 #Patch0:               %{name}.patch
 BuildRequires:  java
 BuildRequires:  ant
-Requires:       java >= 1.6-sun
-Requires:       java3d
+Requires:       java >= 1.7-sun
 
 %description
 Sweet Home 3D is a free interior design application
