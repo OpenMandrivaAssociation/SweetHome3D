@@ -11,7 +11,7 @@ Release:	1
 Summary:	Sweet Home 3D is a free interior design application 
 License:	GPLv2+
 Group:		Graphics
-URL:		http://www.sweethome3d.com/
+URL:		https://www.sweethome3d.com/
 Source0:        %{name}-%{version}-src.zip
 #Source1:        FurnitureLibraryEditor-1.12-src.zip
 #Source2:      sunflow-0.07.3g-src-diff.zip
